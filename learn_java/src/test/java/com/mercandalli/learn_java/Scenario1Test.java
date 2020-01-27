@@ -60,15 +60,13 @@ public class Scenario1Test {
 
     @Test
     public void divisionSafeFloat() {
-        //noinspection ConstantConditions
         Assert.assertEquals(
-                "The division of 9 by 2 is expecting 4. It's an integer division",
+                "The division of 9 by 2 is expecting 4.5f. It's a float division",
                 4.5F,
                 Scenario1.divisionSafe(9f, 2f),
                 0.001F
         );
         for (float i = -500f; i < 500f; i++) {
-            //noinspection ConstantConditions
             Assert.assertEquals(
                     i / 98f,
                     Scenario1.divisionSafe(i, 98f),
