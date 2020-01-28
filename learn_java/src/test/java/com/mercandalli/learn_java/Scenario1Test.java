@@ -145,4 +145,18 @@ public class Scenario1Test {
     public void sumEachNumberBetweenException() {
         Scenario1.sumEachNumberBetween(3, 2);
     }
+
+    @Test
+    public void modulo() {
+        Assert.assertEquals("11 modulo 10 should be 1", 1, Scenario1.modulo(11, 10));
+        Assert.assertEquals("3 modulo 2 should be 1", 1, Scenario1.modulo(3, 2));
+        Assert.assertEquals("7 modulo 2 should be 1", 1, Scenario1.modulo(7, 2));
+        Assert.assertEquals("250 modulo 100 should be 50", 50, Scenario1.modulo(250, 50));
+    }
+
+    @Test
+    public void getLastDigitOfInteger() {
+        Assert.assertEquals("The last digit of 120 is 0", 0, Scenario1.getLastDigitOfInteger(120));
+        Assert.assertEquals("The last digit of 121 is 1", 1, Scenario1.getLastDigitOfInteger(121));
+    }
 }

@@ -71,4 +71,19 @@ public class Scenario2Test {
         Assert.assertFalse("isValueAFaceOfTheDie(-2,1) should be false", Scenario2.isValueAFaceOfTheDie(-2, 1));
         Assert.assertFalse("isValueAFaceOfTheDie(3,-1) should be false", Scenario2.isValueAFaceOfTheDie(3, -1));
     }
+
+    @Test
+    public void getResultOfDieThrow() {
+        List<Integer> resultsOfDieThrow = Scenario2.getResultOfDieThrow(6, 200);
+        Assert.assertEquals(200, resultsOfDieThrow.size());
+        for (Integer resultOfDieThrow : resultsOfDieThrow) {
+            Assert.assertNotNull("Oops, the result of throwDie should not be null", resultOfDieThrow);
+            if (resultOfDieThrow > 6) {
+                Assert.fail("Oops, the result of throwDie should not be bigger strict that 6, here the result: " + resultOfDieThrow);
+            }
+            if (resultOfDieThrow < 1) {
+                Assert.fail("Oops, the result of throwDie should not be lower strict than 1, here the result: " + resultOfDieThrow);
+            }
+        }
+    }
 }
