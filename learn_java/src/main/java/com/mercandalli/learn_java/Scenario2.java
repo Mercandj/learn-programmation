@@ -52,7 +52,7 @@ public class Scenario2 {
         // Note: we do not introduce objects for now. But having list here seems OK.
         List<Integer> results = new ArrayList<>();
 
-        // TODO - Here, add to the "results" list all result of the throw. You should
+        // TODO - Here, add to the "results" list all result of the throw.
         results.add(123); // To delete, it's only to show you how to add into the list
 
         return results;
