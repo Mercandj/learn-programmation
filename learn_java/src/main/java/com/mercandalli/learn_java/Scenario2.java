@@ -29,7 +29,7 @@ public class Scenario2 {
      */
     public static int throwDieWith6Face() {
         // TODO - Advice, you should call another method. Maybe the method above ;)
-        return 0;
+        return throwDie(6);
     }
 
     /**
@@ -41,7 +41,14 @@ public class Scenario2 {
             int candidateToCheckThatCouldBeAFaceOfTheDie
     ) {
         // TODO - Check arguments and return the good boolean.
-        return false;
+        if (candidateToCheckThatCouldBeAFaceOfTheDie <= 0) {
+            return false;
+        }
+        //noinspection RedundantIfStatement
+        if (candidateToCheckThatCouldBeAFaceOfTheDie > numberOfFace) {
+            return false;
+        }
+        return true;
     }
 
     public static List<Integer> getResultOfDieThrow(
@@ -52,8 +59,9 @@ public class Scenario2 {
         // Note: we do not introduce objects for now. But having list here seems OK.
         List<Integer> results = new ArrayList<>();
 
-        // TODO - Here, add to the "results" list all result of the throw.
-        results.add(123); // To delete, it's only to show you how to add into the list
+        for (int i = 0; i < numberOfThrow; i++) {
+            results.add(throwDie(numberOfFace));
+        }
 
         return results;
     }
