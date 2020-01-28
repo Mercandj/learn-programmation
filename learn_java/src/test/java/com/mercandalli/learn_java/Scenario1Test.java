@@ -114,7 +114,7 @@ public class Scenario1Test {
             );
             Assert.assertEquals(
                     -1,
-                    Scenario1.sumEachNumberBetweenSafe(i - 1, i)
+                    Scenario1.sumEachNumberBetweenSafe(i + 1, i)
             );
         }
     }
@@ -136,7 +136,7 @@ public class Scenario1Test {
             );
             Assert.assertEquals(
                     -1,
-                    Scenario1.sumEachNumberBetweenSafe(i - 1, i)
+                    Scenario1.sumEachNumberBetweenSafe(i + 1, i)
             );
         }
     }
@@ -151,7 +151,8 @@ public class Scenario1Test {
         Assert.assertEquals("11 modulo 10 should be 1", 1, Scenario1.modulo(11, 10));
         Assert.assertEquals("3 modulo 2 should be 1", 1, Scenario1.modulo(3, 2));
         Assert.assertEquals("7 modulo 2 should be 1", 1, Scenario1.modulo(7, 2));
-        Assert.assertEquals("250 modulo 100 should be 50", 50, Scenario1.modulo(250, 50));
+        Assert.assertEquals("250 modulo 50 should be 0", 0, Scenario1.modulo(250, 50));
+        Assert.assertEquals("256 modulo 50 should be 6", 6, Scenario1.modulo(256, 50));
     }
 
     @Test

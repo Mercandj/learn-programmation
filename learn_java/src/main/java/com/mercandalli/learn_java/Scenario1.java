@@ -48,7 +48,7 @@ public class Scenario1 {
         // TODO - 1. Here you should write the addition of x1 and x2
         // TODO - 2. Go to /learn_java/test/java/com.mercandalli.learn_java/Scenario1Test.java and click the green
         // TODO      arrow next to the "addition" function to check result of your implementation.
-        return 0;
+        return x1 + x2;
     }
 
     /**
@@ -65,7 +65,7 @@ public class Scenario1 {
         // TODO - 3. Bonus: Check into /learn_java/test/java/com.mercandalli.learn_java/Scenario1Test.java the way tests
         // TODO      are written. The goal is to hack your teacher (me ^^) and to write this function to pass the test
         // TODO      without having a real multiplication and without using "*" symbol.
-        return 0;
+        return x1 * x2;
     }
 
     /**
@@ -78,7 +78,10 @@ public class Scenario1 {
         // TODO - Write the division here.
         // TODO - This method is called "safe" and return an Integer instead of int to be able to return "null".
         // TODO - Reminder: divide by zero is dangerous.
-        return null;
+        if (x2 == 0) {
+            return null;
+        }
+        return x1 / x2;
     }
 
     /**
@@ -89,7 +92,10 @@ public class Scenario1 {
         // TODO - Important: it's the type of operand the define if a "integer-division" will be done or not.
         // TODO - For example: "float result = 9 / 4;" will affect into the local variable "result" the value "2f" and
         // TODO - not "2.5f".
-        return 0f;
+        if (x2 == 0) {
+            return null;
+        }
+        return x1 / x2;
     }
 
     /**
@@ -104,7 +110,11 @@ public class Scenario1 {
     public static float power(float x1, int x2) {
         // TODO - Return x1 to the power of x2.
         // TODO - Advice: a loop could be a good idea.
-        return 0;
+        float result = x1;
+        for (int i = 0; i < x2 - 1; i++) {
+            result *= x1;
+        }
+        return result;
     }
 
     /**
@@ -116,7 +126,17 @@ public class Scenario1 {
         // TODO - Again, using a loop here could be a implementation.
         // TODO - Reminder: you can count something by defining local variable and keep adding on it.
         // TODO - For example "int result = 0;" then "result = result + i".
-        return 0;
+        if (from > to) {
+            return -1;
+        }
+        if (from == to) {
+            return from;
+        }
+        int result = 0;
+        for (int i = from; i <= to; i++) {
+            result += i;
+        }
+        return result;
     }
 
     /**
@@ -132,7 +152,17 @@ public class Scenario1 {
         // TODO - It's always better to have a crash and understand why than returning a wrong value.
 
         // TODO - Note: thanks to the "throws IllegalStateException" clients will know that this method can crash.
-        return 0;
+        if (from > to) {
+            throw new IllegalStateException();
+        }
+        if (from == to) {
+            return from;
+        }
+        int result = 0;
+        for (int i = from; i <= to; i++) {
+            result += i;
+        }
+        return result;
     }
 
     /**
@@ -150,7 +180,7 @@ public class Scenario1 {
     public static int modulo(int x1, int modulo) {
         // TODO - Write the modulo to have the result of "x1" modulo "modulo"
         // TODO - Modulo is an operation known by the language (it's pretty important) so it's a symbol. The symbol: "%"
-        return 0;
+        return x1 % modulo;
     }
 
     /**
@@ -162,6 +192,6 @@ public class Scenario1 {
     public static int getLastDigitOfInteger(int numberToGetLastDigitOf) {
         // TODO - Write the code to get the last digit of the number inside the variable "numberToGetLastDigitOf"
         // TODO - Advice: use what's you just learn padawan ^^.
-        return 0;
+        return modulo(numberToGetLastDigitOf, 10);
     }
 }
