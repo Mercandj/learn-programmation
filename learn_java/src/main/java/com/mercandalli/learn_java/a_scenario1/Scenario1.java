@@ -1,4 +1,4 @@
-package com.mercandalli.learn_java;
+package com.mercandalli.learn_java.a_scenario1;
 
 // TODO - Write the code where there is TODO. Then open the file into /learn_java/test/java/com.mercandalli.learn_java/Scenario1Test.java
 // TODO - then click the green arrow next to method with a name starting by this method name.
@@ -48,6 +48,7 @@ public class Scenario1 {
         // TODO - 1. Here you should write the addition of x1 and x2
         // TODO - 2. Go to /learn_java/test/java/com.mercandalli.learn_java/Scenario1Test.java and click the green
         // TODO      arrow next to the "addition" function to check result of your implementation.
+        char i = 'a';
         return 0;
     }
 

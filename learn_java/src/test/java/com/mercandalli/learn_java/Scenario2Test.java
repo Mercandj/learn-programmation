@@ -1,5 +1,6 @@
 package com.mercandalli.learn_java;
 
+import com.mercandalli.learn_java.b_scenario2.Scenario2;
 import org.junit.Assert;
 import org.junit.Test;
 

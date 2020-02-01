@@ -1,4 +1,4 @@
-package com.mercandalli.learn_java;
+package com.mercandalli.learn_java.b_scenario2;
 
 import java.util.ArrayList;
 import java.util.List;
