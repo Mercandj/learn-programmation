@@ -226,3 +226,150 @@ public class Main {
     }
 }
 ```
+
+
+
+## Objects - Session 2
+
+```java
+import java.util.Scanner;
+
+public class Main {
+
+
+    public static int getIntFromUser(String var) {
+        String inputUser = "";
+        int inputUserInt = -1;
+        while (inputUserInt <= 0) {
+            System.out.println("Please given me the " + var + " of the board: " + inputUser);
+            Scanner scanner = new Scanner(System.in);
+            inputUser = scanner.nextLine();
+            System.out.println("The " + var + " you gave me is: " + inputUser);
+            try {
+                inputUserInt = Integer.parseInt(inputUser);
+                System.out.println(var + " converted to int is: " + inputUserInt);
+            } catch (Exception e) {
+                System.out.println("Oops, you don't give me an int: " + e.getMessage());
+            }
+            if (inputUserInt <= 0) {
+                System.out.println((var + " need to be positive :" + inputUserInt));
+            }
+        }
+        return inputUserInt;
+    }
+
+
+    public static void main(String[] args) {
+
+        /*
+        String inputUserX = "";
+        int inputUserXInt = -1;
+        while (inputUserXInt <= 0) {
+            System.out.println("Please given me the X of the board: " + inputUserX);
+            Scanner scanner = new Scanner(System.in);
+            inputUserX = scanner.nextLine();
+            System.out.println("The X you gave me is: " + inputUserX);
+            try {
+                inputUserXInt = Integer.parseInt(inputUserX);
+                System.out.println("X converted to int is: " + inputUserXInt);
+            } catch (Exception e) {
+                System.out.println("Oops, you don't give me an int: " + e.getMessage());
+            }
+            if (inputUserXInt <= 0) {
+                System.out.println(("X need to be positive :" + inputUserXInt));
+            }
+        }
+
+
+        String inputUserY = "";
+        int inputUserYInt = -1;
+        while (inputUserYInt <= 0) {
+            System.out.println("Please given me the Y of the board: " + inputUserY);
+            Scanner scanner = new Scanner(System.in);
+            inputUserY = scanner.nextLine();
+            System.out.println("The Y you gave me is: " + inputUserY);
+            try {
+                inputUserYInt = Integer.parseInt(inputUserY);
+                System.out.println("Y converted to int is: " + inputUserYInt);
+            } catch (Exception e) {
+                System.out.println("Oops, you don't give me an int: " + e.getMessage());
+            }
+            if (inputUserYInt <= 0) {
+                System.out.println(("Y need to be positive :" + inputUserYInt));
+            }
+        }
+         */
+
+
+        int inputUserXInt = getIntFromUser("X");
+        int inputUserYInt = getIntFromUser("Y");
+
+        Board mainBoard = new Board(inputUserXInt, inputUserYInt);
+
+        System.out.println("Board X: " + mainBoard.getX());
+        System.out.println("Board Y: " + mainBoard.getY());
+        mainBoard.display("board: \n");
+
+
+        mainBoard.setX(10);
+
+        System.out.println("Board X: " + mainBoard.getX());
+        System.out.println("Board Y: " + mainBoard.getY());
+        mainBoard.display("board: \n");
+
+
+    }
+}
+```
+
+```java
+class Board {
+
+    private int dimBoard1;
+    private int dimBoard2;
+
+    Board(int x, int y) {
+        if (x <= 0) {
+            throw new IllegalStateException("Oops, x is <= 0: " + x);
+        }
+        if (y <= 0) {
+            throw new IllegalStateException("Oops, y is <= 0: " + y);
+        }
+
+        dimBoard1 = x;
+        dimBoard2 = y;
+    }
+
+    int getX() {
+        return dimBoard1;
+    }
+
+    int getY() {
+        return dimBoard2;
+    }
+
+    void setX(int newValueForX) {
+        dimBoard1 = newValueForX;
+    }
+
+    void setY(int newValueForY) {
+        dimBoard2 = newValueForY;
+    }
+
+    void display(String prefix) {
+        String messageToDisplay = this.convertToDisplayString();
+        System.out.println(prefix + messageToDisplay);
+    }
+
+    String convertToDisplayString() {
+        String result = "";
+        for (int y = 0; y < dimBoard2; y++) {
+            for (int x = 0; x < dimBoard1; x++) {
+                result = result + " _ |";
+            }
+            result = result + "\n";
+        }
+        return result;
+    }
+}
+```
