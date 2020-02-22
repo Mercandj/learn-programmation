@@ -4,7 +4,7 @@ import com.mercandalli.learn_java.a_scenario1.Scenario1;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Scenario1Test {
+public class A_Scenario1Test {
 
     @Test
     @SuppressWarnings("UnnecessaryLocalVariable")

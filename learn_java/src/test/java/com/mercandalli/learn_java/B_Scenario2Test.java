@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Scenario2Test {
+public class B_Scenario2Test {
 
     @Test
     public void throwDieWith6Face() {

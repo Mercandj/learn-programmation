@@ -42,5 +42,5 @@ class Unit {
     static void printToto() {
         System.out.println("toto");
     }
-    
+
 }
