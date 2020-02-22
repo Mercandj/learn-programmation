@@ -237,22 +237,22 @@ import java.util.Scanner;
 public class Main {
 
 
-    public static int getIntFromUser(String var) {
+    public static int getIntFromUser(String coordinate) {
         String inputUser = "";
         int inputUserInt = -1;
         while (inputUserInt <= 0) {
-            System.out.println("Please given me the " + var + " of the board: " + inputUser);
+            System.out.println("Please given me the " + coordinate + " of the board: " + inputUser);
             Scanner scanner = new Scanner(System.in);
             inputUser = scanner.nextLine();
-            System.out.println("The " + var + " you gave me is: " + inputUser);
+            System.out.println("The " + coordinate + " you gave me is: " + inputUser);
             try {
                 inputUserInt = Integer.parseInt(inputUser);
-                System.out.println(var + " converted to int is: " + inputUserInt);
+                System.out.println(coordinate + " converted to int is: " + inputUserInt);
             } catch (Exception e) {
                 System.out.println("Oops, you don't give me an int: " + e.getMessage());
             }
             if (inputUserInt <= 0) {
-                System.out.println((var + " need to be positive :" + inputUserInt));
+                System.out.println((coordinate + " need to be positive :" + inputUserInt));
             }
         }
         return inputUserInt;
@@ -370,6 +370,23 @@ class Board {
             result = result + "\n";
         }
         return result;
+    }
+}
+```
+
+
+```java
+public static void main(String[] args) {
+    Ball ball1 = new Ball("Blue", 2, "Balle1");
+    Ball ball2 = new Ball("Red", 1, "Balle2");
+    Ball ball3 = new Ball("Yellow", 1, "Balle3");
+
+    List<Ball> balls = new ArrayList<Ball>();
+    balls.add(ball1);
+    balls.add(ball2);
+    balls.add(ball3);
+    for (Ball ball : balls) {
+        ball.print();
     }
 }
 ```

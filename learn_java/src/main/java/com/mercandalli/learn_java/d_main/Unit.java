@@ -33,4 +33,14 @@ class Unit {
                 ", power=" + power +
                 '}';
     }
+
+    void printName() {
+
+        System.out.println("name: " + nameSaved);
+    }
+
+    static void printToto() {
+        System.out.println("toto");
+    }
+    
 }
